@@ -3,7 +3,7 @@
 This is a simple React-based User Management application that allows users to sign up, view a list of registered users, delete users, select multiple users, and export selected users' data to a CSV file.
 
 ## Screenshots
-![alt text](<Screenshot 2024-08-29 212954-1.png>)
+![alt text](<Screenshot 2024-08-29 212954.png>)
 
 ## Features
 
