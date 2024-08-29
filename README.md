@@ -1,95 +1,72 @@
-# user_manager
+# User Management App
 
+This is a simple React-based User Management application that allows users to sign up, view a list of registered users, delete users, select multiple users, and export selected users' data to a CSV file.
 
-# User Management Application
+## Screenshots
+![alt text](<Screenshot 2024-08-29 212954-1.png>)
 
-This project is a full-stack user management application built using React, Node.js, Express, MongoDB, and Mongoose. The application allows users to sign up, view a list of registered users, and delete users. The frontend is built with React, while the backend uses Node.js, Express, and MongoDB for the database.
+## Features
 
-## Table of Contents
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Project Structure](#project-structure)
-- [API Endpoints](#api-endpoints)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- **User Sign Up**: Users can sign up by providing their email, first name, last name, and password.
+- **View Users**: Displays a paginated list of users with their email, first name, and last name.
+- **Delete Users**: Allows the deletion of individual users.
+- **Select Users**: Users can select multiple users to be exported.
+- **Export Users**: Exports selected users' data to a CSV file.
 
 ## Prerequisites
 
-Make sure you have the following installed on your system:
+- **Node.js and npm**: Ensure Node.js and npm are installed on your system.
+- **Backend API**: The application relies on a backend API to handle user data. The backend should be running locally.
 
-- [Node.js](https://nodejs.org/en/) (v12.0.0 or higher)
-- [npm](https://www.npmjs.com/) (v6.0.0 or higher) or [yarn](https://yarnpkg.com/)
-- [MongoDB](https://www.mongodb.com/) (v4.0 or higher)
-
-## Installation
-
-### Backend Setup
+## Getting Started
 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/user-management-app.git
+    git clone https://github.com/yourusername/user-management-app.git
     cd user-management-app
     ```
 
-2. **Navigate to the backend directory:**
-
-    ```bash
-    cd backend
-    ```
-
-3. **Install backend dependencies:**
+2. **Install dependencies:**
 
     ```bash
     npm install
     ```
 
-4. **Set up environment variables:**
+3. **Start the backend server:**
 
-    Create a `.env` file in the `backend` directory and add the following:
+    Ensure that the backend API is running locally. Navigate to the backend directory and start the server:
 
-    ```env
-    PORT=8080
-    MONGODB_URI=mongodb://localhost:27017/userManagementDB
+    ```bash
+    npm run server
     ```
 
-5. **Start the backend server:**
+4. **Start the React app:**
 
     ```bash
     npm start
     ```
 
-    The backend server will start on `http://localhost:8080`.
-
-### Frontend Setup
-
-1. **Navigate to the frontend directory:**
-
-    ```bash
-    cd ../frontend
-    ```
-
-2. **Install frontend dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-3. **Start the frontend development server:**
-
-    ```bash
-    npm start
-    ```
-
-    The frontend server will start on `http://localhost:3000`.
-
-## Running the Application
-
-1. Ensure MongoDB is running locally.
-2. Start the backend server (`http://localhost:8080`).
-3. Start the frontend server (`http://localhost:3000`).
+    This command will start the application and open it in your default web browser. The app will be available at [http://localhost:3000](http://localhost:3000).
 
 ## Project Structure
 
+- **App.js**: The main component that handles the user interface and interactions.
+- **App.css**: Contains the styles for the application.
+- **index.js**: The entry point of the application.
+
+## Backend API
+
+The backend API should expose the following endpoints:
+
+- `GET /users`: Retrieve the list of users.
+- `POST /users/register`: Register a new user.
+- `DELETE /users/delete/:userId`: Delete a user by ID.
+- `GET /users/export`: Export selected users' data to a CSV file.
+
+### Example Backend Command
+
+To start the backend server locally, use the following command in the backend project directory:
+
+```bash
+npm run server

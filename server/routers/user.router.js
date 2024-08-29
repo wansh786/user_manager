@@ -71,7 +71,7 @@ userRouter.get("/logout",auth,async(req,res)=>{
 userRouter.delete('/delete/:id',async(req,res)=>{
     let {id}=req.params;
     try {
-        let post=await UserModel.findOneAndDelete({userID:req.body.userID,_id:id})
+        let post=await UserModel.findOneAndDelete({_id:id})
         if(post){
             res.status(200).send({"msg":"data deleted successfully"})
         }
@@ -80,6 +80,14 @@ userRouter.delete('/delete/:id',async(req,res)=>{
         }
     } catch (error) {
         res.status(400).send({"error":error})
+    }
+})
+userRouter.get("/",async(req,res)=>{
+    try {
+        const user=await UserModel.find(req.query);
+        res.status(200).json({users_data:user})
+    } catch (error) {
+        res.status(400).json({error:error})
     }
 })
 
